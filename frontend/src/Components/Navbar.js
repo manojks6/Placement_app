@@ -1,24 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
+
 function Navbar() {
    return (
       <div className="navbar">
-         <a href="/" className="logo">
-            <img
-               src="https://www.placementpreparation.io/images/placement-preparation/placement-preparation-logo.svg"
-               alt="Logo"
-            ></img>
-         </a>
+         <Link to="/" className="logo-text">
+            Placement<span>Prep</span>
+         </Link>
          <div className="menu">
             <ul>
-               <a href="/">Home</a>
-               <a href="/aptitude">Aptitude</a>
-               <a href="/dsa">Coding</a>
-               <a href="/resources">Resources</a>
-               <a href="#" className="button">
+               <Link to="/">Home</Link>
+               <Link to="/aptitude">Aptitude</Link>
+               <Link to="/dsa">Coding</Link>
+               <Link to="/resources">Resources</Link>
+               <div className="button">
                   <input type="text" placeholder="Any Questions"></input>
                   <button>Search</button>
-               </a>
+               </div>
             </ul>
          </div>
       </div>

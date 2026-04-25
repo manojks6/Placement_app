@@ -1,22 +1,21 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Aptitude from "./Pages/Aptitude";
-import Dsa from "./Pages/Dsa";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import TopicPage from "./Pages/TopicPage";
 import Home from "./Pages/Home";
 import Resources from "./Pages/Resources";
+
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dsa" element={<Dsa />} />
-          <Route path="/aptitude" element={<Aptitude />} />
+          <Route path="/dsa" element={<TopicPage endpoint="/dsa" title="Coding (DSA)" />} />
+          <Route path="/aptitude" element={<TopicPage endpoint="/aptitude" title="Aptitude" />} />
           <Route path="/resources" element={<Resources />} />
-          {/* <Route path="/aptitude_answer" element={<Dsa/>} /> */}
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

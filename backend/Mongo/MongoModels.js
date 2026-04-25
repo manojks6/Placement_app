@@ -38,41 +38,25 @@ const Dsa = new mongoose.Schema({
    ],
 });
 
+const Resource = new mongoose.Schema({
+   category: {
+      type: String,
+      required: true,
+   },
+   items: [mongoose.Schema.Types.Mixed]
+});
+
 const AptitudeModel = mongoose.model('AptitudeModel', Aptitude);
 const DsaModel = mongoose.model('DsaModel', Dsa);
+const ResourceModel = mongoose.model('ResourceModel', Resource);
+
 module.exports = {
    AptitudeModel,
-   DsaModel
+   DsaModel,
+   ResourceModel
 };
   
-// const apti = new mongoose.Schema({
-//    qustion: {
-//       type: String,
-//       required: true,
-//    },
-//    answer: {
-//       type: String,
-//       required: true,
-//    },
-// });
-// const listOfAptiTopics = new mongoose.Schema({
-//    type: {
-//       type: String,
-//       required: true,
-//    },
-//    name: {
-//       type: String,
-//       required: true,
-//    },
-// });
 
-
-// const aptiModel = mongoose.model("aptiModel", apti);
-// const listOfAptiTopicsModel = mongoose.model(
-//    "listOfAptiTopicsModel",
-//    listOfAptiTopics
-// );
-// module.exports =;
 
 
 

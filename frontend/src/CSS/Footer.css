@@ -1,24 +1,31 @@
-.h {
-     margin-top: 15px;
-     background-color: #353535;
-     height: 100px;
-     width: 1348px;
-     color: azure;
-     align-items: center;
-     display: flex;
-}
-
 .col {
-     margin: 0px 200px 11px 50px;
-     font-size: small;
+  font-size: 0.95rem;
+  text-align: left;
 }
 
 ul {
-     list-style: none;
-
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .col li {
-     margin-top: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
 
+.col li:hover {
+  color: #60a5fa;
+}
+
+.footer-disclaimer {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  color: #94a3b8;
+  padding: 0 20px;
 }

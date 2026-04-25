@@ -1,19 +1,55 @@
 .Body {
-     background-image: url(../Images/home.jpg);
-     background-repeat: no-repeat;
-     margin-top: 0px;
-     width: 1348px;
-     height: 600px;
-     background-size: cover;
-     margin-bottom: -16px;
-     opacity: 80%;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1920");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  justify-content: flex-start;
 }
 
 .Text {
-     color: antiquewhite;
-     font-family: Georgia, 'Times New Roman', Times, serif;
-     font-size: 50px;
-     font-weight: bold;
-     text-align: left;
-     padding: 120px 0px 0px 100px;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: left;
+  line-height: 1.2;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.Text span {
+  color: #60a5fa;
+  font-size: 4.5rem;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .Text {
+    font-size: 2.5rem;
+    padding-left: 5%;
+  }
 }
