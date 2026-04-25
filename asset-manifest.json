@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Placement_App/static/css/main.a63313cf.css",
+    "main.js": "/Placement_App/static/js/main.63af1616.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/Placement_App/static/js/787.9e9f4ffd.chunk.js",
+    "index.html": "/Placement_App/index.html",
+    "main.a63313cf.css.map": "/Placement_App/static/css/main.a63313cf.css.map",
+    "main.63af1616.js.map": "/Placement_App/static/js/main.63af1616.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/Placement_App/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a63313cf.css",
+    "static/js/main.63af1616.js"
+  ]
+}
