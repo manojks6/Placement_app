@@ -5,7 +5,7 @@ import axios from "axios";
 import Answer from "../Components/Answer";
 import "../CSS/TopicPage.css"; // We'll create a unified CSS
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 function TopicPage({ endpoint, title }) {
    const [data, setData] = useState([]);
@@ -45,36 +45,36 @@ function TopicPage({ endpoint, title }) {
          </div>
          <div className="topic-body">
             {!ans && (
-            <div className="content">
-               {loading ? (
-                  <div className="loader">Loading {title}...</div>
-               ) : error || data.length === 0 ? (
-                  <div className="error-msg">Database connection failed or no data.</div>
-               ) : (
-                  <h3>{title} Topics</h3>
-               )}
-               
-               {!loading && data.map((item, index) => (
-                  <div className="items" key={index}>
-                     <div className="link">
-                        <Link
-                           to="#"
-                           onClick={(e) => {
-                              e.preventDefault();
-                              onClickListener(index);
-                           }}>
-                           {item.Topic}
-                        </Link>
+               <div className="content">
+                  {loading ? (
+                     <div className="loader">Loading {title}...</div>
+                  ) : error || data.length === 0 ? (
+                     <div className="error-msg">Database connection failed or no data.</div>
+                  ) : (
+                     <h3>{title} Topics</h3>
+                  )}
+
+                  {!loading && data.map((item, index) => (
+                     <div className="items" key={index}>
+                        <div className="link">
+                           <Link
+                              to="#"
+                              onClick={(e) => {
+                                 e.preventDefault();
+                                 onClickListener(index);
+                              }}>
+                              {item.Topic}
+                           </Link>
+                        </div>
                      </div>
-                  </div>
-               ))}
-            </div>
+                  ))}
+               </div>
             )}
             {ans && (
-            <div className="answers full-screen">
-               <button onClick={() => setAns(false)} className="back-btn">← Back to Topics</button>
-               <Answer QA={QA} />
-            </div>
+               <div className="answers full-screen">
+                  <button onClick={() => setAns(false)} className="back-btn">← Back to Topics</button>
+                  <Answer QA={QA} />
+               </div>
             )}
          </div>
       </div>
