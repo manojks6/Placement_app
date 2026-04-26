@@ -95,3 +95,18 @@
 .back-btn:hover {
   background: #2563eb;
 }
+
+@media (max-width: 768px) {
+  .topic-body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .content, .answers {
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 1.2rem;
+  }
+}
