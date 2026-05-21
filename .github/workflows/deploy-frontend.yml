@@ -37,6 +37,6 @@ jobs:
 
       - name: Deploy to gh-pages
         working-directory: frontend
-        run: npm run deploy
+        run: npx gh-pages -d build -r "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
