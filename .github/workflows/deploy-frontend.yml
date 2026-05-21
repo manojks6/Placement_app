@@ -39,4 +39,4 @@ jobs:
         working-directory: frontend
         run: npm run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
