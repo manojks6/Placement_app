@@ -4,13 +4,20 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Build and Deploy
+  build:
+    name: Build Frontend
     runs-on: ubuntu-latest
 
     steps:
@@ -30,13 +37,20 @@ jobs:
         working-directory: frontend
         run: npm run build
 
-      - name: Set git identity
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/build
 
-      - name: Deploy to gh-pages
-        working-directory: frontend
-        run: npx gh-pages -d build -r "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    name: Deploy Frontend
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
