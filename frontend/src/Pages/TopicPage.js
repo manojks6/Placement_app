@@ -5,7 +5,7 @@ import axios from "axios";
 import Answer from "../Components/Answer";
 import "../CSS/TopicPage.css"; // We'll create a unified CSS
 
-const API_BASE_URL = process.env.REACT_APP_API_URL;
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 function TopicPage({ endpoint, title }) {
    const [data, setData] = useState([]);
